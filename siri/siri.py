@@ -77,7 +77,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("**Yüklənir 🤓...**")
+    m.edit("**Yüklənir 🤓**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
