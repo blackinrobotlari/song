@@ -10,11 +10,11 @@ from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 ABS="GROUP"
-APPER="MASTER🔍"
-OWNER="MR_JINN_OF_TG"
-GITCLONE="https://t.me/NAZRIYASUPPORT"
-B2="https://t.me/NAZRIYAMUSICS"
-BUTTON1="🎧SUPPORT🎧"
+APPER="𝚈𝚞𝚔𝚕𝚎𝚍𝚒🔍"
+OWNER="A_l_i_y_e_v_d_i"
+GITCLONE="https://t.me/BLACK_MMC"
+B2="https://t.me/Cat_House_Gurups"
+BUTTON1="⚕️Support"
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -27,14 +27,14 @@ async def start(client, message):
             [
                 [
                     InlineKeyboardButton(BUTTON1, url=GITCLONE), 
-                    InlineKeyboardButton('Search Inline', switch_inline_query_current_chat='')
+                    InlineKeyboardButton('Daxili axtarış', switch_inline_query_current_chat='')
                  ]
           ]
         ),
         reply_to_message_id=message.message_id
     )
 
-@Client.on_message(filters.command(['sg']))
+@Client.on_message(filters.command(['song']))
 def a(client, message):
     query=message.text
     print(query)
@@ -62,18 +62,18 @@ def a(client, message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[NAZRIYA/🇮🇳]" 
+            performer = f"𝐁𝖑𝖆𝖈𝐊 𝖘𝖕𝖆𝖈𝐄 🐺" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
 
         except Exception as e:
             print(e)
-            m.edit('**NO DATA FOUNDED WITH THIS TRY WITH ANOTHER !**')
+            m.edit('**BU İLƏ HEÇ BİR MƏLUMAT TAPILMAMIŞDIR !**')
             return
     except Exception as e:
         m.edit(
-            "**found nothing, please try again**"
+            "**heç nə tapılmadı, yenidən cəhd edin**"
         )
         print(str(e))
         return
@@ -83,7 +83,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/NAZRIYASONGBOT">NAZRIYA</a>'
+        rep = f'🎶 <b>Musiqi:</b> <a href="{link}">{title}</a>\n⌚ <b>Vaxt:</b> <code>{duration}</code>\n🤖 <b>Yükləyici:</b> <a href="https://t.me/BlackSpaceSongbot">𝐁𝖑𝖆𝖈𝐊 𝖘𝖕𝖆𝖈𝐄</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -91,7 +91,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('**AN ERROR OCCURED REPORT THIS AT @NAZRIYASUPPORT!!**')
+        m.edit('**Support Gurupu @BLACK_MMC**')
         print(e)
     try:
         os.remove(audio_file)
