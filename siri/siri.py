@@ -38,7 +38,7 @@ async def start(client, message):
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('fetching datas from m.youtube.com')
+    m = message.reply('Mahnı Axtarılır🔎')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -83,7 +83,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>Musiqi:</b> <a href="{link}">{title}</a>\n⌚ <b>Vaxt:</b> <code>{duration}</code>\n🤖 <b>Yükləyici:</b> <a href="https://t.me/BlackSpaceSongbot">𝐁𝖑𝖆𝖈𝐊 𝖘𝖕𝖆𝖈𝐄</a>'
+        rep = f'🎶 <b>Musiqi:</b> <a href="{link}">{title}</a>\n⌚ <b>Sürə:</b> <code>{duration}</code>\n🤖 <b>Yükləyici:</b> <a href="https://t.me/BlackSpaceSongbot">𝐁𝖑𝖆𝖈𝐊 𝖘𝖕𝖆𝖈𝐄</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
